@@ -1,0 +1,1550 @@
+Skip to left side bar
+
+
+
+
+Filter files by name
+/
+Name
+Last Modified
+
+
+
+
+
+
+
+
+
+
+Code
+
+
+
+
+
+
+
+
+import pandas as pd
+df = pd.Series()
+df
+import pandas as pd
+df = pd.Series()
+df
+import pandas as pd
+import numpy as np
+data = np.array(['a','b','c','d'])
+df = pd.Series(data)
+df
+0    a
+1    b
+2    c
+3    d
+dtype: object
+import pandas as pd
+import numpy as np
+data = np.array(['a','b','c','d'])
+df = pd.Series(data)
+df
+0    a
+1    b
+2    c
+3    d
+dtype: object
+data = np.array(['a','b','c','d'])
+df = pd.Series(data,index=[100,101,102,103])
+df
+100    a
+101    b
+102    c
+103    d
+dtype: object
+import pandas as pd
+import numpy as np
+data = {'a' : 0., 'b' : 1., 'c' : 2.}
+df = pd.Series(data)
+df
+​
+a    0.0
+b    1.0
+c    2.0
+dtype: float64
+df = pd.Series(5, index=[0, 1, 2, 3])
+df
+​
+​
+0    5
+1    5
+2    5
+3    5
+dtype: int64
+df= pd.Series([1,2,3,4,5],index = ['a','b','c','d','e'])
+df[2]
+3
+df = pd.Series([1,2,3,4,5],index = ['a','b','c','d','e'])
+df [:3]
+a    1
+b    2
+c    3
+dtype: int64
+df = pd.Series([1,2,3,4,5],index = ['a','b','c','d','e'])
+df[-3:]
+​
+c    3
+d    4
+e    5
+dtype: int64
+df = pd.Series([1,2,3,4,5],index = ['a','b','c','d','e'])
+df['a']
+1
+df = pd.Series([1,2,3,4,5],index = ['a','b','c','d','e'])
+df['c']
+3
+df = pd.Series([1,2,3,4,5],index = ['a','b','c','d','e'])
+df[['b','c','d']]
+b    2
+c    3
+d    4
+dtype: int64
+# dataframe 
+import pandas as pd
+df = pd.DataFrame()
+df
+​
+data = [1,2,3,4,5]
+df = pd.DataFrame(data)
+df
+0
+0	1
+1	2
+2	3
+3	4
+4	5
+data = [['Alex',10],['Bob',12],['Clarke',13]]
+df = pd.DataFrame(data,columns=['Name','Age'])
+df
+​
+Name	Age
+0	Alex	10
+1	Bob	12
+2	Clarke	13
+data = [['Alex',10],['Bob',12],['Clarke',13]]
+df = pd.DataFrame(data,columns=['Name','Age'],dtype=float)
+df
+C:\Users\USER\AppData\Local\Temp\ipykernel_10440\3147788869.py:2: FutureWarning: Could not cast to float64, falling back to object. This behavior is deprecated. In a future version, when a dtype is passed to 'DataFrame', either all columns will be cast to that dtype, or a TypeError will be raised.
+  df = pd.DataFrame(data,columns=['Name','Age'],dtype=float)
+Name	Age
+0	Alex	10.0
+1	Bob	12.0
+2	Clarke	13.0
+data = {'Name':['Tom', 'Jack', 'Steve', 'Ricky'],'Age':[28,34,29,42]}
+df = pd.DataFrame(data)
+df
+Name	Age
+0	Tom	28
+1	Jack	34
+2	Steve	29
+3	Ricky	42
+data = {'Name':['Tom', 'Jack', 'Steve', 'Ricky'],'Age':[28,34,29,42]}
+df = pd.DataFrame(data, index=['rank1','rank2','rank3','rank4'])
+df
+Name	Age
+rank1	Tom	28
+rank2	Jack	34
+rank3	Steve	29
+rank4	Ricky	42
+data = [{'a': 1, 'b': 2},{'a': 5, 'b': 10, 'c': 20}]
+df = pd.DataFrame(data)
+df
+a	b	c
+0	1	2	NaN
+1	5	10	20.0
+data = [{'a': 1, 'b': 2},{'a': 5, 'b': 10, 'c': 20}]
+df = pd.DataFrame(data, index=['first', 'second'])
+df
+a	b	c
+first	1	2	NaN
+second	5	10	20.0
+d = {'one' : pd.Series([1, 2, 3], index=['a', 'b', 'c']),
+   'two' : pd.Series([1, 2, 3, 4], index=['a', 'b', 'c', 'd'])}
+​
+df = pd.DataFrame(d)
+df
+one	two
+a	1.0	1
+b	2.0	2
+c	3.0	3
+d	NaN	4
+d = {'one' : pd.Series([1, 2, 3], index=['a', 'b', 'c']),
+   'two' : pd.Series([1, 2, 3, 4], index=['a', 'b', 'c', 'd'])}
+​
+df = pd.DataFrame(d)
+df['one']
+a    1.0
+b    2.0
+c    3.0
+d    NaN
+Name: one, dtype: float64
+d = {'one' : pd.Series([1, 2, 3], index=['a', 'b', 'c']), 
+   'two' : pd.Series([1, 2, 3, 4], index=['a', 'b', 'c', 'd']), 
+   'three' : pd.Series([10,20,30], index=['a','b','c'])}
+​
+df = pd.DataFrame(d)
+print ("Our dataframe is:")
+df
+Our dataframe is:
+one	two	three
+a	1.0	1	10.0
+b	2.0	2	20.0
+c	3.0	3	30.0
+d	NaN	4	NaN
+d = {'one' : pd.Series([1, 2, 3], index=['a', 'b', 'c']), 
+   'two' : pd.Series([1, 2, 3, 4], index=['a', 'b', 'c', 'd'])}
+​
+df = pd.DataFrame(d)
+df.loc['b']
+​
+one    2.0
+two    2.0
+Name: b, dtype: float64
+d = {'one' : pd.Series([1, 2, 3], index=['a', 'b', 'c']),
+   'two' : pd.Series([1, 2, 3, 4], index=['a', 'b', 'c', 'd'])}
+​
+df = pd.DataFrame(d)
+df.iloc[2]
+​
+one    3.0
+two    3.0
+Name: c, dtype: float64
+d = {'one' : pd.Series([1, 2, 3], index=['a', 'b', 'c']), 
+   'two' : pd.Series([1, 2, 3, 4], index=['a', 'b', 'c', 'd'])}
+​
+df = pd.DataFrame(d)
+df[2:4]
+​
+one	two
+c	3.0	3
+d	NaN	4
+df = pd.DataFrame([[1, 2], [3, 4]], columns = ['a','b'])
+df2 = pd.DataFrame([[5, 6], [7, 8]], columns = ['a','b'])
+​
+df = df.append(df2)
+df
+C:\Users\USER\AppData\Local\Temp\ipykernel_10440\2550053914.py:4: FutureWarning: The frame.append method is deprecated and will be removed from pandas in a future version. Use pandas.concat instead.
+  df = df.append(df2)
+a	b
+0	1	2
+1	3	4
+0	5	6
+1	7	8
+# panels
+import pandas as pd
+import numpy as np
+df = pd.Series(np.random.randn(4))
+print ("The axes are:")
+df
+​
+The axes are:
+0   -0.508702
+1   -0.381070
+2    0.740312
+3   -0.558730
+dtype: float64
+df= pd.Series(np.random.randn(4))
+print ("The axes are:")
+df.axes
+​
+The axes are:
+[RangeIndex(start=0, stop=4, step=1)]
+df= pd.Series(np.random.randn(4))
+df
+​
+print ("The dimensions of the object:")
+df.ndim
+​
+The dimensions of the object:
+1
+df= pd.Series(np.random.randn(2))
+df
+print ("The size of the object:")
+df.size
+​
+The size of the object:
+2
+df= pd.Series(np.random.randn(4))
+print("The original series is:")
+df
+​
+print("The first two rows of the data series:")
+df.head(2)
+​
+The original series is:
+The first two rows of the data series:
+0   -0.885908
+1   -0.516127
+dtype: float64
+df = pd.Series(np.random.randn(4))
+print ("The original series is:")
+df
+​
+print ("The first two rows of the data series:")
+df.tail(2)
+​
+The original series is:
+The first two rows of the data series:
+2   -0.412613
+3    1.578682
+dtype: float64
+import pandas as pd
+import numpy as np
+d = {'Name':pd.Series(['Tom','James','Ricky','Vin','Steve','Smith','Jack']),
+   'Age':pd.Series([25,26,25,23,30,29,23]),
+   'Rating':pd.Series([4.23,3.24,3.98,2.56,3.20,4.6,3.8])}
+df = pd.DataFrame(d)
+print ("Our data series is:")
+df
+​
+Our data series is:
+Name	Age	Rating
+0	Tom	25	4.23
+1	James	26	3.24
+2	Ricky	25	3.98
+3	Vin	23	2.56
+4	Steve	30	3.20
+5	Smith	29	4.60
+6	Jack	23	3.80
+d = {'Name':pd.Series(['Tom','James','Ricky','Vin','Steve','Smith','Jack']),
+   'Age':pd.Series([25,26,25,23,30,29,23]),
+   'Rating':pd.Series([4.23,3.24,3.98,2.56,3.20,4.6,3.8])}
+df = pd.DataFrame(d)
+print ("The transpose of the data series is:")
+df.T
+​
+The transpose of the data series is:
+0	1	2	3	4	5	6
+Name	Tom	James	Ricky	Vin	Steve	Smith	Jack
+Age	25	26	25	23	30	29	23
+Rating	4.23	3.24	3.98	2.56	3.2	4.6	3.8
+d = {'Name':pd.Series(['Tom','James','Ricky','Vin','Steve','Smith','Jack']),
+   'Age':pd.Series([25,26,25,23,30,29,23]),
+   'Rating':pd.Series([4.23,3.24,3.98,2.56,3.20,4.6,3.8])}
+df = pd.DataFrame(d)
+print ("Row axis labels and column axis labels are:")
+df.axes
+​
+​
+Row axis labels and column axis labels are:
+[RangeIndex(start=0, stop=7, step=1),
+ Index(['Name', 'Age', 'Rating'], dtype='object')]
+d = {'Name':pd.Series(['Tom','James','Ricky','Vin','Steve','Smith','Jack']),
+   'Age':pd.Series([25,26,25,23,30,29,23]),
+   'Rating':pd.Series([4.23,3.24,3.98,2.56,3.20,4.6,3.8])}
+df = pd.DataFrame(d)
+print ("The data types of each column are:")
+df.dtypes
+​
+The data types of each column are:
+Name       object
+Age         int64
+Rating    float64
+dtype: object
+d = {'Name':pd.Series(['Tom','James','Ricky','Vin','Steve','Smith','Jack']),
+   'Age':pd.Series([25,26,25,23,30,29,23]),
+   'Rating':pd.Series([4.23,3.24,3.98,2.56,3.20,4.6,3.8])}
+df = pd.DataFrame(d)
+print ("Our object is:")
+df
+print ("The shape of the object is:")
+df.shape
+​
+Our object is:
+The shape of the object is:
+(7, 3)
+d = {'Name':pd.Series(['Tom','James','Ricky','Vin','Steve','Smith','Jack']),
+   'Age':pd.Series([25,26,25,23,30,29,23]),
+   'Rating':pd.Series([4.23,3.24,3.98,2.56,3.20,4.6,3.8])}
+df = pd.DataFrame(d)
+print ("Our object is:")
+df
+print ("The shape of the object is:")
+df.size
+Our object is:
+The shape of the object is:
+21
+d = {'Name':pd.Series(['Tom','James','Ricky','Vin','Steve','Smith','Jack']),
+   'Age':pd.Series([25,26,25,23,30,29,23]),
+   'Rating':pd.Series([4.23,3.24,3.98,2.56,3.20,4.6,3.8])}
+df = pd.DataFrame(d)
+print ("Our object is:")
+df
+print ("The shape of the object is:")
+df.values
+Our object is:
+The shape of the object is:
+array([['Tom', 25, 4.23],
+       ['James', 26, 3.24],
+       ['Ricky', 25, 3.98],
+       ['Vin', 23, 2.56],
+       ['Steve', 30, 3.2],
+       ['Smith', 29, 4.6],
+       ['Jack', 23, 3.8]], dtype=object)
+d = {'Name':pd.Series(['Tom','James','Ricky','Vin','Steve','Smith','Jack']),
+   'Age':pd.Series([25,26,25,23,30,29,23]),
+   'Rating':pd.Series([4.23,3.24,3.98,2.56,3.20,4.6,3.8])}
+df = pd.DataFrame(d)
+print ("Our object is:")
+df
+print ("The first two rows of the data frame is:")
+df.head(2)
+​
+Our object is:
+The first two rows of the data frame is:
+Name	Age	Rating
+0	Tom	25	4.23
+1	James	26	3.24
+d = {'Name':pd.Series(['Tom','James','Ricky','Vin','Steve','Smith','Jack']),
+   'Age':pd.Series([25,26,25,23,30,29,23]),
+   'Rating':pd.Series([4.23,3.24,3.98,2.56,3.20,4.6,3.8])}
+df = pd.DataFrame(d)
+print ("Our object is:")
+df
+print ("The last two rows of the data frame is:")
+df.tail(2)
+​
+Our object is:
+The last two rows of the data frame is:
+Name	Age	Rating
+5	Smith	29	4.6
+6	Jack	23	3.8
+d = {'Name':pd.Series(['Tom','James','Ricky','Vin','Steve','Smith','Jack']),
+   'Age':pd.Series([25,26,25,23,30,29,23]),
+   'Rating':pd.Series([4.23,3.24,3.98,2.56,3.20,4.6,3.8])}
+df = pd.DataFrame(d)
+print ("Our object is:")
+df
+df = pd.DataFrame(d)
+df.sum()
+​
+Our object is:
+Name      TomJamesRickyVinSteveSmithJack
+Age                                  181
+Rating                             25.61
+dtype: object
+d = {'Name':pd.Series(['Tom','James','Ricky','Vin','Steve','Smith','Jack']),
+   'Age':pd.Series([25,26,25,23,30,29,23]),
+   'Rating':pd.Series([4.23,3.24,3.98,2.56,3.20,4.6,3.8])}
+df = pd.DataFrame(d)
+print ("Our object is:")
+df
+df = pd.DataFrame(d)
+df.sum(1)
+​
+Our object is:
+C:\Users\USER\AppData\Local\Temp\ipykernel_12068\969052337.py:8: FutureWarning: Dropping of nuisance columns in DataFrame reductions (with 'numeric_only=None') is deprecated; in a future version this will raise TypeError.  Select only valid columns before calling the reduction.
+  df.sum(1)
+0    29.23
+1    29.24
+2    28.98
+3    25.56
+4    33.20
+5    33.60
+6    26.80
+dtype: float64
+d = {'Name':pd.Series(['Tom','James','Ricky','Vin','Steve','Smith','Jack']),
+   'Age':pd.Series([25,26,25,23,30,29,23]),
+   'Rating':pd.Series([4.23,3.24,3.98,2.56,3.20,4.6,3.8])}
+df = pd.DataFrame(d)
+print ("Our object is:")
+df
+df = pd.DataFrame(d)
+df.mean()
+​
+Our object is:
+C:\Users\USER\AppData\Local\Temp\ipykernel_12068\1243920809.py:8: FutureWarning: The default value of numeric_only in DataFrame.mean is deprecated. In a future version, it will default to False. In addition, specifying 'numeric_only=None' is deprecated. Select only valid columns or specify the value of numeric_only to silence this warning.
+  df.mean()
+Age       25.857143
+Rating     3.658571
+dtype: float64
+d = {'Name':pd.Series(['Tom','James','Ricky','Vin','Steve','Smith','Jack']),
+   'Age':pd.Series([25,26,25,23,30,29,23]),
+   'Rating':pd.Series([4.23,3.24,3.98,2.56,3.20,4.6,3.8])}
+df = pd.DataFrame(d)
+print ("Our object is:")
+df
+df = pd.DataFrame(d)
+df.std()
+​
+Our object is:
+C:\Users\USER\AppData\Local\Temp\ipykernel_12068\2222713460.py:8: FutureWarning: The default value of numeric_only in DataFrame.std is deprecated. In a future version, it will default to False. In addition, specifying 'numeric_only=None' is deprecated. Select only valid columns or specify the value of numeric_only to silence this warning.
+  df.std()
+Age       2.734262
+Rating    0.698628
+dtype: float64
+d = {'Name':pd.Series(['Tom','James','Ricky','Vin','Steve','Smith','Jack']),
+   'Age':pd.Series([25,26,25,23,30,29,23]),
+   'Rating':pd.Series([4.23,3.24,3.98,2.56,3.20,4.6,3.8])}
+df = pd.DataFrame(d)
+print ("Our object is:")
+df
+df = pd.DataFrame(d)
+df.describe()
+​
+Our object is:
+Age	Rating
+count	7.000000	7.000000
+mean	25.857143	3.658571
+std	2.734262	0.698628
+min	23.000000	2.560000
+25%	24.000000	3.220000
+50%	25.000000	3.800000
+75%	27.500000	4.105000
+max	30.000000	4.600000
+d = {'Name':pd.Series(['Tom','James','Ricky','Vin','Steve','Smith','Jack']),
+   'Age':pd.Series([25,26,25,23,30,29,23]),
+   'Rating':pd.Series([4.23,3.24,3.98,2.56,3.20,4.6,3.8])}
+df = pd.DataFrame(d)
+print ("Our object is:")
+df
+df = pd.DataFrame(d)
+df.describe(include=['object'])
+​
+Our object is:
+Name
+count	7
+unique	7
+top	Tom
+freq	1
+d = {'Name':pd.Series(['Tom','James','Ricky','Vin','Steve','Smith','Jack']),
+   'Age':pd.Series([25,26,25,23,30,29,23]),
+   'Rating':pd.Series([4.23,3.24,3.98,2.56,3.20,4.6,3.8])}
+df = pd.DataFrame(d)
+print ("Our object is:")
+df
+df = pd.DataFrame(d)
+df.describe(include='all')
+​
+Our object is:
+Name	Age	Rating
+count	7	7.000000	7.000000
+unique	7	NaN	NaN
+top	Tom	NaN	NaN
+freq	1	NaN	NaN
+mean	NaN	25.857143	3.658571
+std	NaN	2.734262	0.698628
+min	NaN	23.000000	2.560000
+25%	NaN	24.000000	3.220000
+50%	NaN	25.000000	3.800000
+75%	NaN	27.500000	4.105000
+max	NaN	30.000000	4.600000
+import pandas as pd
+import numpy as np
+​
+df = pd.DataFrame(np.random.randn(5,3),columns=['col1','col2','col3'])
+df.apply(np.mean)
+df.apply(np.mean)
+​
+col1    0.096819
+col2   -0.047871
+col3    0.102176
+dtype: float64
+import pandas as pd
+import numpy as np
+df = pd.DataFrame(np.random.randn(5,3),columns=['col1','col2','col3'])
+df['col1'].map(lambda x:x*100)
+df.apply(np.mean)
+​
+col1   -0.026653
+col2    0.187341
+col3   -0.692545
+dtype: float64
+df1 = pd.DataFrame(np.random.randn(10,3),columns=['col1','col2','col3'])
+df2 = pd.DataFrame(np.random.randn(7,3),columns=['col1','col2','col3'])
+​
+df1 = df1.reindex_like(df2)
+df1
+​
+col1	col2	col3
+0	0.641426	0.062526	0.645560
+1	-0.925553	0.166880	-1.167039
+2	0.388595	0.849310	1.191901
+3	0.272030	-0.419512	1.774270
+4	0.774806	1.428226	-0.009137
+5	-0.590638	0.231305	-0.731533
+6	-0.652613	-0.247598	1.471478
+import pandas as pd
+import numpy as np
+ 
+unsorted_df = pd.DataFrame(np.random.randn(10,2),index=[1,4,6,2,3,5,9,8,0,7],columns = ['col2','col1'])
+ 
+sorted_df=unsorted_df.sort_index(axis=1)
+​
+sorted_df
+​
+​
+col1	col2
+1	-1.224704	1.157831
+4	-0.621429	-0.700367
+6	0.411405	-2.063262
+2	1.135307	-1.127932
+3	0.681610	1.896981
+5	-0.892270	-0.745151
+9	-0.812443	0.066222
+8	0.831977	0.558003
+0	0.234713	0.335659
+7	-0.953759	0.324452
+import pandas as pd
+import numpy as np
+​
+unsorted_df = pd.DataFrame({'col1':[2,1,1,1],'col2':[1,3,2,4]})
+sorted_df = unsorted_df.sort_values(by='col1')
+sorted_df
+​
+col1	col2
+1	1	3
+2	1	2
+3	1	4
+0	2	1
+unsorted_df = pd.DataFrame({'col1':[2,1,1,1],'col2':[1,3,2,4]})
+sorted_df = unsorted_df.sort_values(by=['col1','col2'])
+​
+sorted_df
+​
+col1	col2
+2	1	2
+1	1	3
+3	1	4
+0	2	1
+df = pd.DataFrame(np.random.randn(8, 4),
+index = ['a','b','c','d','e','f','g','h'], columns = ['A', 'B', 'C', 'D'])
+df.loc[:,'A']
+​
+a    0.960212
+b   -0.609302
+c   -0.914567
+d   -1.506256
+e   -1.635544
+f    0.945639
+g    0.940035
+h    0.158626
+Name: A, dtype: float64
+df = pd.DataFrame(np.random.randn(8, 4),
+index = ['a','b','c','d','e','f','g','h'], columns = ['A', 'B', 'C', 'D'])
+df.loc[:,['A','C']]
+​
+A	C
+a	0.339483	-1.543120
+b	1.712143	-0.929941
+c	-0.135304	-0.750033
+d	0.558963	-2.383041
+e	-0.819307	1.555339
+f	-1.587002	1.127040
+g	0.057882	-0.599948
+h	1.074515	-1.965923
+import pandas as pd
+import numpy as np
+​
+df = pd.DataFrame(np.random.randn(8, 4), columns = ['A', 'B', 'C', 'D'])
+df.iloc[:4]
+​
+A	B	C	D
+0	-2.400353	0.085944	-0.594528	-0.184666
+1	-1.325393	-1.004112	-1.201401	-0.552661
+2	-0.172240	-0.425015	-1.069350	-1.102272
+3	1.037652	-0.190964	0.128203	0.169214
+import pandas as pd
+import numpy as np
+​
+df = pd.DataFrame(np.random.randn(5, 3), index=['a', 'c', 'e', 'f',
+'h'],columns=['one', 'two', 'three'])
+df = df.reindex(['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h'])
+df
+​
+​
+one	two	three
+a	0.108504	-1.912929	-0.370398
+b	NaN	NaN	NaN
+c	-0.559151	2.905395	0.321883
+d	NaN	NaN	NaN
+e	0.582050	-1.172120	-0.856490
+f	0.460785	-1.201612	0.577025
+g	NaN	NaN	NaN
+h	1.312559	0.782335	-0.066229
+import pandas as pd
+import numpy as np
+ 
+df = pd.DataFrame(np.random.randn(5, 3), index=['a', 'c', 'e', 'f',
+'h'],columns=['one', 'two', 'three'])
+df = df.reindex(['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h'])
+df['one'].isnull()
+​
+a    False
+b     True
+c    False
+d     True
+e    False
+f    False
+g     True
+h    False
+Name: one, dtype: bool
+df = pd.DataFrame(np.random.randn(5, 3), index=['a', 'c', 'e', 'f',
+'h'],columns=['one', 'two', 'three'])
+​
+df = df.reindex(['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h'])
+​
+df['one'].sum()
+​
+​
+-0.2806216868999962
+df = pd.DataFrame(np.random.randn(5, 3), index=['a', 'c', 'e', 'f',
+'h'],columns=['one', 'two', 'three'])
+df = df.reindex(['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h'])
+df.fillna(method='pad')
+​
+​
+one	two	three
+a	0.393860	-0.543656	-1.978283
+b	0.393860	-0.543656	-1.978283
+c	-0.797896	-0.005649	-0.220354
+d	-0.797896	-0.005649	-0.220354
+e	1.378544	-1.922127	3.245068
+f	-0.466773	1.351955	1.270960
+g	-0.466773	1.351955	1.270960
+h	-0.070341	1.470570	0.217550
+import pandas as pd
+​
+ipl_data = {'Team': ['Riders', 'Riders', 'Devils', 'Devils', 'Kings',
+   'kings', 'Kings', 'Kings', 'Riders', 'Royals', 'Royals', 'Riders'],
+   'Rank': [1, 2, 2, 3, 3,4 ,1 ,1,2 , 4,1,2],
+   'Year': [2014,2015,2014,2015,2014,2015,2016,2017,2016,2014,2015,2017],
+   'Points':[876,789,863,673,741,812,756,788,694,701,804,690]}
+df = pd.DataFrame(ipl_data)
+df
+​
+Team	Rank	Year	Points
+0	Riders	1	2014	876
+1	Riders	2	2015	789
+2	Devils	2	2014	863
+3	Devils	3	2015	673
+4	Kings	3	2014	741
+5	kings	4	2015	812
+6	Kings	1	2016	756
+7	Kings	1	2017	788
+8	Riders	2	2016	694
+9	Royals	4	2014	701
+10	Royals	1	2015	804
+11	Riders	2	2017	690
+import pandas as pd
+​
+ipl_data = {'Team': ['Riders', 'Riders', 'Devils', 'Devils', 'Kings',
+   'kings', 'Kings', 'Kings', 'Riders', 'Royals', 'Royals', 'Riders'],
+   'Rank': [1, 2, 2, 3, 3,4 ,1 ,1,2 , 4,1,2],
+   'Year': [2014,2015,2014,2015,2014,2015,2016,2017,2016,2014,2015,2017],
+   'Points':[876,789,863,673,741,812,756,788,694,701,804,690]}
+df = pd.DataFrame(ipl_data)
+df.groupby('Team')
+​
+<pandas.core.groupby.generic.DataFrameGroupBy object at 0x000002120C8020A0>
+import pandas as pd
+​
+ipl_data = {'Team': ['Riders', 'Riders', 'Devils', 'Devils', 'Kings',
+   'kings', 'Kings', 'Kings', 'Riders', 'Royals', 'Royals', 'Riders'],
+   'Rank': [1, 2, 2, 3, 3,4 ,1 ,1,2 , 4,1,2],
+   'Year': [2014,2015,2014,2015,2014,2015,2016,2017,2016,2014,2015,2017],
+   'Points':[876,789,863,673,741,812,756,788,694,701,804,690]}
+df = pd.DataFrame(ipl_data)
+df.groupby(['Team','Year']).groups
+{('Devils', 2014): [2], ('Devils', 2015): [3], ('Kings', 2014): [4], ('Kings', 2016): [6], ('Kings', 2017): [7], ('Riders', 2014): [0], ('Riders', 2015): [1], ('Riders', 2016): [8], ('Riders', 2017): [11], ('Royals', 2014): [9], ('Royals', 2015): [10], ('kings', 2015): [5]}
+import pandas as pd
+​
+ipl_data = {'Team': ['Riders', 'Riders', 'Devils', 'Devils', 'Kings',
+   'kings', 'Kings', 'Kings', 'Riders', 'Royals', 'Royals', 'Riders'],
+   'Rank': [1, 2, 2, 3, 3,4 ,1 ,1,2 , 4,1,2],
+   'Year': [2014,2015,2014,2015,2014,2015,2016,2017,2016,2014,2015,2017],
+   'Points':[876,789,863,673,741,812,756,788,694,701,804,690]}
+df = pd.DataFrame(ipl_data)
+import pandas as pd
+import numpy as np
+​
+df = pd.DataFrame(np.random.rand(10,4),columns=['a','b','c','d')
+​
+df.plot.barh(stacked=True)
+​
+  Cell In[26], line 4
+    df = pd.DataFrame(np.random.rand(10,4),columns=['a','b','c','d')
+                                                                   ^
+SyntaxError: closing parenthesis ')' does not match opening parenthesis '['
+​
+
+
+
+
+
+
+
+
+
+
+Code
+
+
+
+
+
+
+
+
+import pandas as pd
+df = pd.Series()
+df
+import pandas as pd
+import numpy as np
+data = np.array(['a','b','c','d'])
+df = pd.Series(data)
+df
+0    a
+1    b
+2    c
+3    d
+dtype: object
+import pandas as pd
+import numpy as np
+data = np.array(['a','b','c','d'])
+df = pd.Series(data)
+df
+0    a
+1    b
+2    c
+3    d
+dtype: object
+data = np.array(['a','b','c','d'])
+df = pd.Series(data,index=[100,101,102,103])
+df
+100    a
+101    b
+102    c
+103    d
+dtype: object
+import pandas as pd
+import numpy as np
+data = {'a' : 0., 'b' : 1., 'c' : 2.}
+df = pd.Series(data)
+df
+​
+a    0.0
+b    1.0
+c    2.0
+dtype: float64
+df = pd.Series(5, index=[0, 1, 2, 3])
+df
+​
+​
+0    5
+1    5
+2    5
+3    5
+dtype: int64
+df= pd.Series([1,2,3,4,5],index = ['a','b','c','d','e'])
+df[2]
+3
+df = pd.Series([1,2,3,4,5],index = ['a','b','c','d','e'])
+df [:3]
+a    1
+b    2
+c    3
+dtype: int64
+df = pd.Series([1,2,3,4,5],index = ['a','b','c','d','e'])
+df[-3:]
+​
+c    3
+d    4
+e    5
+dtype: int64
+df = pd.Series([1,2,3,4,5],index = ['a','b','c','d','e'])
+df['a']
+1
+df = pd.Series([1,2,3,4,5],index = ['a','b','c','d','e'])
+df['c']
+3
+df = pd.Series([1,2,3,4,5],index = ['a','b','c','d','e'])
+df[['b','c','d']]
+b    2
+c    3
+d    4
+dtype: int64
+# dataframe 
+import pandas as pd
+df = pd.DataFrame()
+df
+​
+data = [1,2,3,4,5]
+df = pd.DataFrame(data)
+df
+0
+0	1
+1	2
+2	3
+3	4
+4	5
+data = [['Alex',10],['Bob',12],['Clarke',13]]
+df = pd.DataFrame(data,columns=['Name','Age'])
+df
+​
+Name	Age
+0	Alex	10
+1	Bob	12
+2	Clarke	13
+data = [['Alex',10],['Bob',12],['Clarke',13]]
+df = pd.DataFrame(data,columns=['Name','Age'],dtype=float)
+df
+C:\Users\USER\AppData\Local\Temp\ipykernel_10440\3147788869.py:2: FutureWarning: Could not cast to float64, falling back to object. This behavior is deprecated. In a future version, when a dtype is passed to 'DataFrame', either all columns will be cast to that dtype, or a TypeError will be raised.
+  df = pd.DataFrame(data,columns=['Name','Age'],dtype=float)
+Name	Age
+0	Alex	10.0
+1	Bob	12.0
+2	Clarke	13.0
+data = {'Name':['Tom', 'Jack', 'Steve', 'Ricky'],'Age':[28,34,29,42]}
+df = pd.DataFrame(data)
+df
+Name	Age
+0	Tom	28
+1	Jack	34
+2	Steve	29
+3	Ricky	42
+data = {'Name':['Tom', 'Jack', 'Steve', 'Ricky'],'Age':[28,34,29,42]}
+df = pd.DataFrame(data, index=['rank1','rank2','rank3','rank4'])
+df
+Name	Age
+rank1	Tom	28
+rank2	Jack	34
+rank3	Steve	29
+rank4	Ricky	42
+data = [{'a': 1, 'b': 2},{'a': 5, 'b': 10, 'c': 20}]
+df = pd.DataFrame(data)
+df
+a	b	c
+0	1	2	NaN
+1	5	10	20.0
+data = [{'a': 1, 'b': 2},{'a': 5, 'b': 10, 'c': 20}]
+df = pd.DataFrame(data, index=['first', 'second'])
+df
+a	b	c
+first	1	2	NaN
+second	5	10	20.0
+d = {'one' : pd.Series([1, 2, 3], index=['a', 'b', 'c']),
+   'two' : pd.Series([1, 2, 3, 4], index=['a', 'b', 'c', 'd'])}
+​
+df = pd.DataFrame(d)
+df
+one	two
+a	1.0	1
+b	2.0	2
+c	3.0	3
+d	NaN	4
+d = {'one' : pd.Series([1, 2, 3], index=['a', 'b', 'c']),
+   'two' : pd.Series([1, 2, 3, 4], index=['a', 'b', 'c', 'd'])}
+​
+df = pd.DataFrame(d)
+df['one']
+a    1.0
+b    2.0
+c    3.0
+d    NaN
+Name: one, dtype: float64
+d = {'one' : pd.Series([1, 2, 3], index=['a', 'b', 'c']), 
+   'two' : pd.Series([1, 2, 3, 4], index=['a', 'b', 'c', 'd']), 
+   'three' : pd.Series([10,20,30], index=['a','b','c'])}
+​
+df = pd.DataFrame(d)
+print ("Our dataframe is:")
+df
+Our dataframe is:
+one	two	three
+a	1.0	1	10.0
+b	2.0	2	20.0
+c	3.0	3	30.0
+d	NaN	4	NaN
+d = {'one' : pd.Series([1, 2, 3], index=['a', 'b', 'c']), 
+   'two' : pd.Series([1, 2, 3, 4], index=['a', 'b', 'c', 'd'])}
+​
+df = pd.DataFrame(d)
+df.loc['b']
+​
+one    2.0
+two    2.0
+Name: b, dtype: float64
+d = {'one' : pd.Series([1, 2, 3], index=['a', 'b', 'c']),
+   'two' : pd.Series([1, 2, 3, 4], index=['a', 'b', 'c', 'd'])}
+​
+df = pd.DataFrame(d)
+df.iloc[2]
+​
+one    3.0
+two    3.0
+Name: c, dtype: float64
+d = {'one' : pd.Series([1, 2, 3], index=['a', 'b', 'c']), 
+   'two' : pd.Series([1, 2, 3, 4], index=['a', 'b', 'c', 'd'])}
+​
+df = pd.DataFrame(d)
+df[2:4]
+​
+one	two
+c	3.0	3
+d	NaN	4
+df = pd.DataFrame([[1, 2], [3, 4]], columns = ['a','b'])
+df2 = pd.DataFrame([[5, 6], [7, 8]], columns = ['a','b'])
+​
+df = df.append(df2)
+df
+C:\Users\USER\AppData\Local\Temp\ipykernel_10440\2550053914.py:4: FutureWarning: The frame.append method is deprecated and will be removed from pandas in a future version. Use pandas.concat instead.
+  df = df.append(df2)
+a	b
+0	1	2
+1	3	4
+0	5	6
+1	7	8
+# panels
+import pandas as pd
+import numpy as np
+df = pd.Series(np.random.randn(4))
+print ("The axes are:")
+df
+​
+The axes are:
+0   -0.508702
+1   -0.381070
+2    0.740312
+3   -0.558730
+dtype: float64
+df= pd.Series(np.random.randn(4))
+print ("The axes are:")
+df.axes
+​
+The axes are:
+[RangeIndex(start=0, stop=4, step=1)]
+df= pd.Series(np.random.randn(4))
+df
+​
+print ("The dimensions of the object:")
+df.ndim
+​
+The dimensions of the object:
+1
+df= pd.Series(np.random.randn(2))
+df
+print ("The size of the object:")
+df.size
+​
+The size of the object:
+2
+df= pd.Series(np.random.randn(4))
+print("The original series is:")
+df
+​
+print("The first two rows of the data series:")
+df.head(2)
+​
+The original series is:
+The first two rows of the data series:
+0   -0.885908
+1   -0.516127
+dtype: float64
+df = pd.Series(np.random.randn(4))
+print ("The original series is:")
+df
+​
+print ("The first two rows of the data series:")
+df.tail(2)
+​
+The original series is:
+The first two rows of the data series:
+2   -0.412613
+3    1.578682
+dtype: float64
+import pandas as pd
+import numpy as np
+d = {'Name':pd.Series(['Tom','James','Ricky','Vin','Steve','Smith','Jack']),
+   'Age':pd.Series([25,26,25,23,30,29,23]),
+   'Rating':pd.Series([4.23,3.24,3.98,2.56,3.20,4.6,3.8])}
+df = pd.DataFrame(d)
+print ("Our data series is:")
+df
+​
+Our data series is:
+Name	Age	Rating
+0	Tom	25	4.23
+1	James	26	3.24
+2	Ricky	25	3.98
+3	Vin	23	2.56
+4	Steve	30	3.20
+5	Smith	29	4.60
+6	Jack	23	3.80
+d = {'Name':pd.Series(['Tom','James','Ricky','Vin','Steve','Smith','Jack']),
+   'Age':pd.Series([25,26,25,23,30,29,23]),
+   'Rating':pd.Series([4.23,3.24,3.98,2.56,3.20,4.6,3.8])}
+df = pd.DataFrame(d)
+print ("The transpose of the data series is:")
+df.T
+​
+The transpose of the data series is:
+0	1	2	3	4	5	6
+Name	Tom	James	Ricky	Vin	Steve	Smith	Jack
+Age	25	26	25	23	30	29	23
+Rating	4.23	3.24	3.98	2.56	3.2	4.6	3.8
+d = {'Name':pd.Series(['Tom','James','Ricky','Vin','Steve','Smith','Jack']),
+   'Age':pd.Series([25,26,25,23,30,29,23]),
+   'Rating':pd.Series([4.23,3.24,3.98,2.56,3.20,4.6,3.8])}
+df = pd.DataFrame(d)
+print ("Row axis labels and column axis labels are:")
+df.axes
+​
+​
+Row axis labels and column axis labels are:
+[RangeIndex(start=0, stop=7, step=1),
+ Index(['Name', 'Age', 'Rating'], dtype='object')]
+d = {'Name':pd.Series(['Tom','James','Ricky','Vin','Steve','Smith','Jack']),
+   'Age':pd.Series([25,26,25,23,30,29,23]),
+   'Rating':pd.Series([4.23,3.24,3.98,2.56,3.20,4.6,3.8])}
+df = pd.DataFrame(d)
+print ("The data types of each column are:")
+df.dtypes
+​
+The data types of each column are:
+Name       object
+Age         int64
+Rating    float64
+dtype: object
+d = {'Name':pd.Series(['Tom','James','Ricky','Vin','Steve','Smith','Jack']),
+   'Age':pd.Series([25,26,25,23,30,29,23]),
+   'Rating':pd.Series([4.23,3.24,3.98,2.56,3.20,4.6,3.8])}
+df = pd.DataFrame(d)
+print ("Our object is:")
+df
+print ("The shape of the object is:")
+df.shape
+​
+Our object is:
+The shape of the object is:
+(7, 3)
+d = {'Name':pd.Series(['Tom','James','Ricky','Vin','Steve','Smith','Jack']),
+   'Age':pd.Series([25,26,25,23,30,29,23]),
+   'Rating':pd.Series([4.23,3.24,3.98,2.56,3.20,4.6,3.8])}
+df = pd.DataFrame(d)
+print ("Our object is:")
+df
+print ("The shape of the object is:")
+df.size
+Our object is:
+The shape of the object is:
+21
+d = {'Name':pd.Series(['Tom','James','Ricky','Vin','Steve','Smith','Jack']),
+   'Age':pd.Series([25,26,25,23,30,29,23]),
+   'Rating':pd.Series([4.23,3.24,3.98,2.56,3.20,4.6,3.8])}
+df = pd.DataFrame(d)
+print ("Our object is:")
+df
+print ("The shape of the object is:")
+df.values
+Our object is:
+The shape of the object is:
+array([['Tom', 25, 4.23],
+       ['James', 26, 3.24],
+       ['Ricky', 25, 3.98],
+       ['Vin', 23, 2.56],
+       ['Steve', 30, 3.2],
+       ['Smith', 29, 4.6],
+       ['Jack', 23, 3.8]], dtype=object)
+d = {'Name':pd.Series(['Tom','James','Ricky','Vin','Steve','Smith','Jack']),
+   'Age':pd.Series([25,26,25,23,30,29,23]),
+   'Rating':pd.Series([4.23,3.24,3.98,2.56,3.20,4.6,3.8])}
+df = pd.DataFrame(d)
+print ("Our object is:")
+df
+print ("The first two rows of the data frame is:")
+df.head(2)
+​
+Our object is:
+The first two rows of the data frame is:
+Name	Age	Rating
+0	Tom	25	4.23
+1	James	26	3.24
+d = {'Name':pd.Series(['Tom','James','Ricky','Vin','Steve','Smith','Jack']),
+   'Age':pd.Series([25,26,25,23,30,29,23]),
+   'Rating':pd.Series([4.23,3.24,3.98,2.56,3.20,4.6,3.8])}
+df = pd.DataFrame(d)
+print ("Our object is:")
+df
+print ("The last two rows of the data frame is:")
+df.tail(2)
+​
+Our object is:
+The last two rows of the data frame is:
+Name	Age	Rating
+5	Smith	29	4.6
+6	Jack	23	3.8
+d = {'Name':pd.Series(['Tom','James','Ricky','Vin','Steve','Smith','Jack']),
+   'Age':pd.Series([25,26,25,23,30,29,23]),
+   'Rating':pd.Series([4.23,3.24,3.98,2.56,3.20,4.6,3.8])}
+df = pd.DataFrame(d)
+print ("Our object is:")
+df
+df = pd.DataFrame(d)
+df.sum()
+​
+Our object is:
+Name      TomJamesRickyVinSteveSmithJack
+Age                                  181
+Rating                             25.61
+dtype: object
+d = {'Name':pd.Series(['Tom','James','Ricky','Vin','Steve','Smith','Jack']),
+   'Age':pd.Series([25,26,25,23,30,29,23]),
+   'Rating':pd.Series([4.23,3.24,3.98,2.56,3.20,4.6,3.8])}
+df = pd.DataFrame(d)
+print ("Our object is:")
+df
+df = pd.DataFrame(d)
+df.sum(1)
+​
+Our object is:
+C:\Users\USER\AppData\Local\Temp\ipykernel_12068\969052337.py:8: FutureWarning: Dropping of nuisance columns in DataFrame reductions (with 'numeric_only=None') is deprecated; in a future version this will raise TypeError.  Select only valid columns before calling the reduction.
+  df.sum(1)
+0    29.23
+1    29.24
+2    28.98
+3    25.56
+4    33.20
+5    33.60
+6    26.80
+dtype: float64
+d = {'Name':pd.Series(['Tom','James','Ricky','Vin','Steve','Smith','Jack']),
+   'Age':pd.Series([25,26,25,23,30,29,23]),
+   'Rating':pd.Series([4.23,3.24,3.98,2.56,3.20,4.6,3.8])}
+df = pd.DataFrame(d)
+print ("Our object is:")
+df
+df = pd.DataFrame(d)
+df.mean()
+​
+Our object is:
+C:\Users\USER\AppData\Local\Temp\ipykernel_12068\1243920809.py:8: FutureWarning: The default value of numeric_only in DataFrame.mean is deprecated. In a future version, it will default to False. In addition, specifying 'numeric_only=None' is deprecated. Select only valid columns or specify the value of numeric_only to silence this warning.
+  df.mean()
+Age       25.857143
+Rating     3.658571
+dtype: float64
+d = {'Name':pd.Series(['Tom','James','Ricky','Vin','Steve','Smith','Jack']),
+   'Age':pd.Series([25,26,25,23,30,29,23]),
+   'Rating':pd.Series([4.23,3.24,3.98,2.56,3.20,4.6,3.8])}
+df = pd.DataFrame(d)
+print ("Our object is:")
+df
+df = pd.DataFrame(d)
+df.std()
+​
+Our object is:
+C:\Users\USER\AppData\Local\Temp\ipykernel_12068\2222713460.py:8: FutureWarning: The default value of numeric_only in DataFrame.std is deprecated. In a future version, it will default to False. In addition, specifying 'numeric_only=None' is deprecated. Select only valid columns or specify the value of numeric_only to silence this warning.
+  df.std()
+Age       2.734262
+Rating    0.698628
+dtype: float64
+d = {'Name':pd.Series(['Tom','James','Ricky','Vin','Steve','Smith','Jack']),
+   'Age':pd.Series([25,26,25,23,30,29,23]),
+   'Rating':pd.Series([4.23,3.24,3.98,2.56,3.20,4.6,3.8])}
+df = pd.DataFrame(d)
+print ("Our object is:")
+df
+df = pd.DataFrame(d)
+df.describe()
+​
+Our object is:
+Age	Rating
+count	7.000000	7.000000
+mean	25.857143	3.658571
+std	2.734262	0.698628
+min	23.000000	2.560000
+25%	24.000000	3.220000
+50%	25.000000	3.800000
+75%	27.500000	4.105000
+max	30.000000	4.600000
+d = {'Name':pd.Series(['Tom','James','Ricky','Vin','Steve','Smith','Jack']),
+   'Age':pd.Series([25,26,25,23,30,29,23]),
+   'Rating':pd.Series([4.23,3.24,3.98,2.56,3.20,4.6,3.8])}
+df = pd.DataFrame(d)
+print ("Our object is:")
+df
+df = pd.DataFrame(d)
+df.describe(include=['object'])
+​
+Our object is:
+Name
+count	7
+unique	7
+top	Tom
+freq	1
+d = {'Name':pd.Series(['Tom','James','Ricky','Vin','Steve','Smith','Jack']),
+   'Age':pd.Series([25,26,25,23,30,29,23]),
+   'Rating':pd.Series([4.23,3.24,3.98,2.56,3.20,4.6,3.8])}
+df = pd.DataFrame(d)
+print ("Our object is:")
+df
+df = pd.DataFrame(d)
+df.describe(include='all')
+​
+Our object is:
+Name	Age	Rating
+count	7	7.000000	7.000000
+unique	7	NaN	NaN
+top	Tom	NaN	NaN
+freq	1	NaN	NaN
+mean	NaN	25.857143	3.658571
+std	NaN	2.734262	0.698628
+min	NaN	23.000000	2.560000
+25%	NaN	24.000000	3.220000
+50%	NaN	25.000000	3.800000
+75%	NaN	27.500000	4.105000
+max	NaN	30.000000	4.600000
+import pandas as pd
+import numpy as np
+​
+df = pd.DataFrame(np.random.randn(5,3),columns=['col1','col2','col3'])
+df.apply(np.mean)
+df.apply(np.mean)
+​
+col1    0.096819
+col2   -0.047871
+col3    0.102176
+dtype: float64
+import pandas as pd
+import numpy as np
+df = pd.DataFrame(np.random.randn(5,3),columns=['col1','col2','col3'])
+df['col1'].map(lambda x:x*100)
+df.apply(np.mean)
+​
+col1   -0.026653
+col2    0.187341
+col3   -0.692545
+dtype: float64
+df1 = pd.DataFrame(np.random.randn(10,3),columns=['col1','col2','col3'])
+df2 = pd.DataFrame(np.random.randn(7,3),columns=['col1','col2','col3'])
+​
+df1 = df1.reindex_like(df2)
+df1
+​
+col1	col2	col3
+0	0.641426	0.062526	0.645560
+1	-0.925553	0.166880	-1.167039
+2	0.388595	0.849310	1.191901
+3	0.272030	-0.419512	1.774270
+4	0.774806	1.428226	-0.009137
+5	-0.590638	0.231305	-0.731533
+6	-0.652613	-0.247598	1.471478
+import pandas as pd
+import numpy as np
+ 
+unsorted_df = pd.DataFrame(np.random.randn(10,2),index=[1,4,6,2,3,5,9,8,0,7],columns = ['col2','col1'])
+ 
+sorted_df=unsorted_df.sort_index(axis=1)
+​
+sorted_df
+​
+​
+col1	col2
+1	-1.224704	1.157831
+4	-0.621429	-0.700367
+6	0.411405	-2.063262
+2	1.135307	-1.127932
+3	0.681610	1.896981
+5	-0.892270	-0.745151
+9	-0.812443	0.066222
+8	0.831977	0.558003
+0	0.234713	0.335659
+7	-0.953759	0.324452
+import pandas as pd
+import numpy as np
+​
+unsorted_df = pd.DataFrame({'col1':[2,1,1,1],'col2':[1,3,2,4]})
+sorted_df = unsorted_df.sort_values(by='col1')
+sorted_df
+​
+col1	col2
+1	1	3
+2	1	2
+3	1	4
+0	2	1
+unsorted_df = pd.DataFrame({'col1':[2,1,1,1],'col2':[1,3,2,4]})
+sorted_df = unsorted_df.sort_values(by=['col1','col2'])
+​
+sorted_df
+​
+col1	col2
+2	1	2
+1	1	3
+3	1	4
+0	2	1
+df = pd.DataFrame(np.random.randn(8, 4),
+index = ['a','b','c','d','e','f','g','h'], columns = ['A', 'B', 'C', 'D'])
+df.loc[:,'A']
+​
+a    0.960212
+b   -0.609302
+c   -0.914567
+d   -1.506256
+e   -1.635544
+f    0.945639
+g    0.940035
+h    0.158626
+Name: A, dtype: float64
+df = pd.DataFrame(np.random.randn(8, 4),
+index = ['a','b','c','d','e','f','g','h'], columns = ['A', 'B', 'C', 'D'])
+df.loc[:,['A','C']]
+​
+A	C
+a	0.339483	-1.543120
+b	1.712143	-0.929941
+c	-0.135304	-0.750033
+d	0.558963	-2.383041
+e	-0.819307	1.555339
+f	-1.587002	1.127040
+g	0.057882	-0.599948
+h	1.074515	-1.965923
+import pandas as pd
+import numpy as np
+​
+df = pd.DataFrame(np.random.randn(8, 4), columns = ['A', 'B', 'C', 'D'])
+df.iloc[:4]
+​
+A	B	C	D
+0	-2.400353	0.085944	-0.594528	-0.184666
+1	-1.325393	-1.004112	-1.201401	-0.552661
+2	-0.172240	-0.425015	-1.069350	-1.102272
+3	1.037652	-0.190964	0.128203	0.169214
+import pandas as pd
+import numpy as np
+​
+df = pd.DataFrame(np.random.randn(5, 3), index=['a', 'c', 'e', 'f',
+'h'],columns=['one', 'two', 'three'])
+df = df.reindex(['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h'])
+df
+​
+​
+one	two	three
+a	0.108504	-1.912929	-0.370398
+b	NaN	NaN	NaN
+c	-0.559151	2.905395	0.321883
+d	NaN	NaN	NaN
+e	0.582050	-1.172120	-0.856490
+f	0.460785	-1.201612	0.577025
+g	NaN	NaN	NaN
+h	1.312559	0.782335	-0.066229
+import pandas as pd
+import numpy as np
+ 
+df = pd.DataFrame(np.random.randn(5, 3), index=['a', 'c', 'e', 'f',
+'h'],columns=['one', 'two', 'three'])
+df = df.reindex(['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h'])
+df['one'].isnull()
+​
+a    False
+b     True
+c    False
+d     True
+e    False
+f    False
+g     True
+h    False
+Name: one, dtype: bool
+df = pd.DataFrame(np.random.randn(5, 3), index=['a', 'c', 'e', 'f',
+'h'],columns=['one', 'two', 'three'])
+​
+df = df.reindex(['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h'])
+​
+df['one'].sum()
+​
+​
+-0.2806216868999962
+df = pd.DataFrame(np.random.randn(5, 3), index=['a', 'c', 'e', 'f',
+'h'],columns=['one', 'two', 'three'])
+df = df.reindex(['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h'])
+df.fillna(method='pad')
+​
+​
+one	two	three
+a	0.393860	-0.543656	-1.978283
+b	0.393860	-0.543656	-1.978283
+c	-0.797896	-0.005649	-0.220354
+d	-0.797896	-0.005649	-0.220354
+e	1.378544	-1.922127	3.245068
+f	-0.466773	1.351955	1.270960
+g	-0.466773	1.351955	1.270960
+h	-0.070341	1.470570	0.217550
+import pandas as pd
+​
+ipl_data = {'Team': ['Riders', 'Riders', 'Devils', 'Devils', 'Kings',
+   'kings', 'Kings', 'Kings', 'Riders', 'Royals', 'Royals', 'Riders'],
+   'Rank': [1, 2, 2, 3, 3,4 ,1 ,1,2 , 4,1,2],
+   'Year': [2014,2015,2014,2015,2014,2015,2016,2017,2016,2014,2015,2017],
+   'Points':[876,789,863,673,741,812,756,788,694,701,804,690]}
+df = pd.DataFrame(ipl_data)
+df
+​
+Team	Rank	Year	Points
+0	Riders	1	2014	876
+1	Riders	2	2015	789
+2	Devils	2	2014	863
+3	Devils	3	2015	673
+4	Kings	3	2014	741
+5	kings	4	2015	812
+6	Kings	1	2016	756
+7	Kings	1	2017	788
+8	Riders	2	2016	694
+9	Royals	4	2014	701
+10	Royals	1	2015	804
+11	Riders	2	2017	690
+import pandas as pd
+​
+ipl_data = {'Team': ['Riders', 'Riders', 'Devils', 'Devils', 'Kings',
+   'kings', 'Kings', 'Kings', 'Riders', 'Royals', 'Royals', 'Riders'],
+   'Rank': [1, 2, 2, 3, 3,4 ,1 ,1,2 , 4,1,2],
+   'Year': [2014,2015,2014,2015,2014,2015,2016,2017,2016,2014,2015,2017],
+   'Points':[876,789,863,673,741,812,756,788,694,701,804,690]}
+df = pd.DataFrame(ipl_data)
+df.groupby('Team')
+​
+<pandas.core.groupby.generic.DataFrameGroupBy object at 0x000002120C8020A0>
+import pandas as pd
+​
+ipl_data = {'Team': ['Riders', 'Riders', 'Devils', 'Devils', 'Kings',
+   'kings', 'Kings', 'Kings', 'Riders', 'Royals', 'Royals', 'Riders'],
+   'Rank': [1, 2, 2, 3, 3,4 ,1 ,1,2 , 4,1,2],
+   'Year': [2014,2015,2014,2015,2014,2015,2016,2017,2016,2014,2015,2017],
+   'Points':[876,789,863,673,741,812,756,788,694,701,804,690]}
+df = pd.DataFrame(ipl_data)
+df.groupby(['Team','Year']).groups
+{('Devils', 2014): [2], ('Devils', 2015): [3], ('Kings', 2014): [4], ('Kings', 2016): [6], ('Kings', 2017): [7], ('Riders', 2014): [0], ('Riders', 2015): [1], ('Riders', 2016): [8], ('Riders', 2017): [11], ('Royals', 2014): [9], ('Royals', 2015): [10], ('kings', 2015): [5]}
+import pandas as pd
+​
+ipl_data = {'Team': ['Riders', 'Riders', 'Devils', 'Devils', 'Kings',
+   'kings', 'Kings', 'Kings', 'Riders', 'Royals', 'Royals', 'Riders'],
+   'Rank': [1, 2, 2, 3, 3,4 ,1 ,1,2 , 4,1,2],
+   'Year': [2014,2015,2014,2015,2014,2015,2016,2017,2016,2014,2015,2017],
+   'Points':[876,789,863,673,741,812,756,788,694,701,804,690]}
+df = pd.DataFrame(ipl_data)
+import pandas as pd
+import numpy as np
+​
+df = pd.DataFrame(np.random.rand(10,4),columns=['a','b','c','d')
+​
+df.plot.barh(stacked=True)
+​
+  Cell In[26], line 4
+    df = pd.DataFrame(np.random.rand(10,4),columns=['a','b','c','d')
+                                                                   ^
+SyntaxError: closing parenthesis ')' does not match opening parenthesis '['
+​
+
+Simple
+0
+5
+Python 3 (ipykernel) | Idle
+Untitled8.ipynb
+Ln 2, Col 2
+Mode: Command
